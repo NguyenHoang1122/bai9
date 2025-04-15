@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh gia cuoc dien thoai</title>
+</head>
+<style>
+  table {
+    border: 1px solid black;
+    width: 600px;
+    border-collapse: collapse;
+  }
+  th, td{
+    border: 1px solid black;
+    padding: 0;
+  }
+  input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box; /* Giúp tính cả padding + border trong 100% width */
+    border: none;
+    padding: 4px;
+  }
+</style>
+<body>
+<form>
+  <table>
+    <tr>
+      <th></th>
+      <th>Cước thuê bao/Tháng</th>
+      <th>Cước gọi nội hạt/Phút</th>
+      <th>Cước gọi đến mạng khác/Phút</th>
+      <th>Cước tin nhắn nội mạng/Tin</th>
+      <th>Cước tin nhắn ngoại mạng/Tin</th>
+    </tr>
+    <tr>
+      <th>Giá(VND)</th>
+      <td>220000</td>
+      <td>220</td>
+      <td>1090</td>
+      <td>50</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>Số lượng Sử dụng</th>
+      <td>1</td>
+      <td><input id="internal" type="number"/></td>
+      <td><input id="outside" type="number"/></td>
+      <td><input id="internalMessage" type="number"/></td>
+      <td><input id="outsideMessage" type="number"/></td>
+    </tr>
+    <tr>
+      <th><button type="button" onclick="check()">Thành tiền</button> </th>
+      <td colspan="5"><span id="result" >0</span> VND</td>
+    </tr>
+  </table>
+</form>
+<script src="bai7.js"></script>
+</body>
+</html>
