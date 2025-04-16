@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phuong trinh bac 1</title>
+</head>
+<style>
+    table{
+        border-collapse: collapse;
+        border: 1px solid black;
+    }
+    th, td{
+        border: 1px solid black;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    input{
+        width: 97%;
+        text-align: center;
+        border: none;
+    }
+    button{
+        width: 100%;
+    }
+</style>
+<body>
+<table>
+    <tr>
+        <th>ax+b=0</th>
+        <th>a</th>
+        <th>b</th>
+    </tr>
+    <tr>
+        <th>Giá trị</th>
+        <td><input type="number" id="numberA"/></td>
+        <td><input type="number" id="numberB"/></td>
+    </tr>
+    <tr>
+        <th><button onclick="checkPhuongTrinh()">Kết Quả</button></th>
+        <td colspan="2"><span id="result"></span></td>
+    </tr>
+</table>
+<script src="js/bai6.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dien Tich Tam Giac Vuong</title>
+</head>
+<style>
+    table{
+        border-collapse: collapse;
+        border: 1px solid black;
+    }
+    th, td{
+        border: 1px solid black;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    input{
+        width: 97%;
+        text-align: center;
+        border: none;
+    }
+    button{
+        width: 100%;
+    }
+</style>
+<body>
+<table>
+    <tr>
+        <th>Cạnh</th>
+        <th>A</th>
+        <th>B</th>
+    </tr>
+    <tr>
+        <th>Đơn vị(m)</th>
+        <td><input type="number" id="canhA"/></td>
+        <td><input type="number" id="canhB"/></td>
+    </tr>
+    <tr>
+        <th><button onclick="checkDT()">Kết Quả</button></th>
+        <td colspan="2"><span id="result"></span></td>
+    </tr>
+</table>
+<script src="js/bai5.js"></script>
+</body>
+</html>

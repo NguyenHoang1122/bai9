@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen doi nhiet do C --> F</title>
+</head>
+<style>
+    table{
+        width: 500px;
+        border-collapse: collapse;
+        boder: 1px solid black;
+    }
+    th, td{
+        border: 1px solid black;
+    }
+    input{
+        width: 97%;
+        border: none;
+        text-align: center;
+    }
+    .container{
+        width: 40%;
+    }
+    td{
+        text-align: center;
+    }
+</style>
+<body>
+<table>
+    <tr>
+        <th>Loại</th>
+        <th class="container">Độ C</th>
+        <th class="container">Độ F</th>
+    </tr>
+    <tr>
+        <th>Giá Trị</th>
+        <td><input type="number" id="doC" oninput="checkdoF()" placeholder="nhap do C"/></td>
+        <td><span id="result"></span></td>
+    </tr>
+</table>
+<script src="js/bai1.js"></script>
+</body>
+</html>

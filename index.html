@@ -1,14 +1,135 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--Ngay sinh :-->
+<!--<input id="birthday" type="date">-->
+<!--<button onclick="getAge()" >Ket qua</button>-->
+<!--<p id="demo"></p>-->
+<!--<script src="nhap.js"></script>-->
+<!--</body>-->
+<!--</html>-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Máy Tính</title>
+    <style>
+        body {
+            background: #ececec;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: sans-serif;
+        }
+
+        .calculator {
+            background: #222;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .display {
+            background: #000;
+            color: #0f0;
+            font-size: 2em;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: right;
+            margin-bottom: 15px;
+            min-width: 240px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 60px);
+            gap: 10px;
+        }
+
+        .buttons button {
+            font-size: 1.2em;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #333;
+            color: #fff;
+            transition: 0.2s;
+        }
+
+        .buttons button:hover {
+            background: #555;
+        }
+
+        .buttons .equal {
+            background: #0a84ff;
+            color: white;
+        }
+
+        .buttons .clear {
+            background: #ff3b30;
+        }
+    </style>
 </head>
 <body>
-Ngay sinh :
-<input id="birthday" type="date">
-<button onclick="getAge()" >Ket qua</button>
-<p id="demo"></p>
-<script src="nhap.js"></script>
+
+<div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+        <button onclick="press('7')">7</button>
+        <button onclick="press('8')">8</button>
+        <button onclick="press('9')">9</button>
+        <button onclick="press('/')">÷</button>
+
+        <button onclick="press('4')">4</button>
+        <button onclick="press('5')">5</button>
+        <button onclick="press('6')">6</button>
+        <button onclick="press('*')">×</button>
+
+        <button onclick="press('1')">1</button>
+        <button onclick="press('2')">2</button>
+        <button onclick="press('3')">3</button>
+        <button onclick="press('-')">−</button>
+
+        <button onclick="press('0')">0</button>
+        <button onclick="press('.')">.</button>
+        <button onclick="calculate()" class="equal">=</button>
+        <button onclick="press('+')">+</button>
+
+        <button onclick="clearDisplay()" class="clear" style="grid-column: span 4;">C</button>
+    </div>
+</div>
+
+<script>
+    let expression = "";
+
+    function press(value) {
+        if (expression === "0" && value !== ".") expression = "";
+        expression += value;
+        document.getElementById("display").innerText = expression;
+    }
+
+    function calculate() {
+        try {
+            const result = eval(expression);
+            document.getElementById("display").innerText = result;
+            expression = result.toString();
+        } catch {
+            document.getElementById("display").innerText = "Lỗi";
+            expression = "";
+        }
+    }
+
+    function clearDisplay() {
+        expression = "";
+        document.getElementById("display").innerText = "0";
+    }
+</script>
+
 </body>
 </html>
